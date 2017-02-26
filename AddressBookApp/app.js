@@ -8,7 +8,9 @@ app.controller('saveAddress', function ($scope, addressBookService) {
     }
 });
 
-
+app.controller('searchAddress', function (addressBookService,$scope) {
+    $scope.addressBook = addressBookService.getAll();
+});
 
 app.service("addressBookService", function () {
     var addressBook = [];
@@ -20,6 +22,8 @@ app.service("addressBookService", function () {
                 email: email
             });
         },
-        
+        getAll: function () {
+            return addressBook;
+        }
     }
 });
