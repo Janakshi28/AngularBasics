@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>First Angular App</title>
+	<meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="addressBook">
+    <h1>Address Book</h1>
+    <div ng-controller="saveAddress">
+        {{pageTitle}}
+        <h2>{{firstName + " " +lastName | uppercase}}</h2>
+        First Name: <input type="text" ng-model="firstName" /><br/><br/>
+        Last Name: <input type="text" ng-model="lastName" /><br /><br />
+        Email: <input type="text" ng-model="email" /><br /><br />
+        <input type="submit" value="Save" ng-click="save(firstName,lastName,email)"/>
+    </div>
+    
+    
+</body>
+</html>
